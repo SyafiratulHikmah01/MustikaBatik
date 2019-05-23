@@ -50,7 +50,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="Auth/">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Profile</span></a>
       </li>
@@ -64,30 +64,17 @@
           <span>Produk</span></a>
       </li>
 
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Testimoni/index'); ?>">
+        <a class="nav-link" href="<?php echo base_url('Pelanggan/index'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Testimoni</span></a>
+          <span>Pelanggan</span></a>
       </li>
-
-      <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url('Pembelian/index'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Pembelian</span></a>
-      </li>
-
-        <hr class="sidebar-divider my-0">
-
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Pelanggan/index'); ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Pelanggan</span></a>
       </li>
 
       <!-- Divider -->
@@ -159,7 +146,7 @@
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="btn btn-danger square-btn-adjust" href="<?php echo site_url('LoginProses/logout') ?>">
                 
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
@@ -175,62 +162,78 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-           <h2> <p align="center"> Produk Mustika Batik Banyuwangi </p> </h2>
+           <h2> <p align="center"> Detail Data Pembelian Mustika Batik Banyuwangi </p> </h2>
           <!-- Page Heading -->
         
           <!-- Content Row -->
           <div class="row">
+      <strong style="color: black;"><?php echo $user[0]->nama_pelanggan; ?></strong> 
+          </div>
 
-            <p> <a href="<?php echo base_url()?>Auth/input" class="btn btn-primary"> Tambah Produk </a> </p>
-            <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nama Produk</th>
-      <th scope="col">Harga Produk</th>
-      <th scope="col">Berat Produk</th>
-      <th scope="col">Foto Produk</th>
-      <th scope="col">Deskripsi Produk</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
-                $no = 1;
-                foreach ($data as $row): ?>
-    <tr>
-      <th scope="row"><?php echo $no;?></th>
-      <td><?php echo $row->nama_produk;?></td>
-      <td><?php echo $row->harga_produk;?></td>
-      <td><?php echo $row->berat_produk;?></td>
-      <td><?php echo $row->foto_produk;?></td>
-      <td><?php echo $row->deskripsi_produk;?></td>
-      <td> <a href="<?php echo base_url(); ?>Auth/delete/<?php echo $row->id_produk;?>" class="btn btn-danger">hapus</a> </td>
-      <td> <a href="<?php echo base_url(); ?>Auth/edit/<?php echo $row->id_produk;?>" class="btn btn-warning">edit</a> </td>
-      </td>
-    </tr>
-   <?php $no++;
-                endforeach;?>
-  </tbody>
-</table>
+          <br>      
 
+          <div>
 
+        <div class="row" style="color: black;">
+			<div class="col-md-4">
+				<h3>Pembelian</h3>
+				 <strong>No. Pembelian: <?php echo $user[0]->id_pembelian;?></strong><br>
+				 Tanggal: <?php echo $user[0]->tanggal_pembelian;?><br>
+				 Total: Rp. <?php echo number_format($user[0]->total_pembelian); ?> 
+			</div>
+			<div class="col-md-4">
+				<h3>Pelanggan</h3>
+				<strong><?php echo $user[0]->nama_pelanggan;?></strong><br>
+					<?php echo $user[0]->telepon_pelanggan;?><br>
+					<?php echo $user[0]->email_pelanggan;?>
+			</div>
+			<div class="col-md-4">
+				<h3>Pengiriman</h3>
+				<strong>Mustika Batik Banyuwangi</strong><br>
+				Ongkir: Rp. <?php echo $user[0]->id_ongkir;?><br>
+				Alamat: <?php echo $user[0]->alamat_pengiriman;?>
+			</div>
 
-   
+		</div>
             
           </div>
 
-          <!-- Content Row -->
-
-          <div class="row">
-
-        
-            
-          </div>
-
-          <!-- Content Row -->
+<br>          <!-- Content Row -->
           <div class="row">
 
             <!-- Content Column -->
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>No</th>
+			<th>Nama Produk</th>
+			<th>Gambar</th>
+			<th>Harga</th>
+			<th>Jumlah</th>
+			<th>Subtotal</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php
+                $no = 1;
+                foreach ($data as $row): ?>
+        <tr>
+			<td scope="row"><?php echo $no;?></td>
+			<td><?php echo $row->nama_produk;?></td>
+			<td>
+			<img src="foto_produk/<?php echo $row->foto_produk;?>" width ="100" > 
+			 </td>
+			<td><?php echo $row->harga_produk;?></td>
+			<td><?php echo $row->jumlah;?></td>
+			<td>
+				<?php echo $row->harga_produk * $row->jumlah; ?>
+			</td>
+		</tr>
+		 <?php $no++;
+                endforeach;?>
+	</tbody>
+</table>
            
 
          

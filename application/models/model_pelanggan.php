@@ -11,9 +11,10 @@ class model_pelanggan extends CI_Model {
 		//return $query->result_array();
 	}
 
-	function input($data = array()){
-		//query builder
-		return $this->db->insert('pelanggan',$data);
+	function delete($id){
+		$this->db->where('id_pelanggan',$id);
+		$this->db->delete('pelanggan');
+		
 	}
 
 }

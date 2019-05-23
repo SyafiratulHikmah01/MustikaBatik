@@ -50,7 +50,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="Auth/">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Profile</span></a>
       </li>
@@ -66,11 +66,10 @@
 
       <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Testimoni/index'); ?>">
+        <a class="nav-link" href="<?php echo base_url('Pelanggan/index'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Testimoni</span></a>
+          <span>Pelanggan</span></a>
       </li>
 
       <hr class="sidebar-divider my-0">
@@ -80,14 +79,6 @@
         <a class="nav-link" href="<?php echo base_url('Pembelian/index'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Pembelian</span></a>
-      </li>
-
-        <hr class="sidebar-divider my-0">
-
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Pelanggan/index'); ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Pelanggan</span></a>
       </li>
 
       <!-- Divider -->
@@ -159,7 +150,7 @@
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="btn btn-danger square-btn-adjust" href="<?php echo site_url('LoginProses/logout') ?>">
                 
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
@@ -175,22 +166,22 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-           <h2> <p align="center"> Produk Mustika Batik Banyuwangi </p> </h2>
+           <h2> <p align="center"> Data Pembelian Mustika Batik Banyuwangi </p> </h2>
           <!-- Page Heading -->
         
           <!-- Content Row -->
           <div class="row">
 
-            <p> <a href="<?php echo base_url()?>Auth/input" class="btn btn-primary"> Tambah Produk </a> </p>
-            <table class="table table-striped">
+           
+ <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nama Produk</th>
-      <th scope="col">Harga Produk</th>
-      <th scope="col">Berat Produk</th>
-      <th scope="col">Foto Produk</th>
-      <th scope="col">Deskripsi Produk</th>
+      <th scope="col">No</th>
+      <th scope="col">Nama Pelanggan</th>
+      <th scope="col">Tanggal</th>
+      <th scope="col">Status Pembelian</th>
+      <th scope="col">Total</th>
+     
     </tr>
   </thead>
   <tbody>
@@ -199,14 +190,21 @@
                 foreach ($data as $row): ?>
     <tr>
       <th scope="row"><?php echo $no;?></th>
-      <td><?php echo $row->nama_produk;?></td>
-      <td><?php echo $row->harga_produk;?></td>
-      <td><?php echo $row->berat_produk;?></td>
-      <td><?php echo $row->foto_produk;?></td>
-      <td><?php echo $row->deskripsi_produk;?></td>
-      <td> <a href="<?php echo base_url(); ?>Auth/delete/<?php echo $row->id_produk;?>" class="btn btn-danger">hapus</a> </td>
-      <td> <a href="<?php echo base_url(); ?>Auth/edit/<?php echo $row->id_produk;?>" class="btn btn-warning">edit</a> </td>
+      <td><?php echo $row->nama_pelanggan;?></td>
+      <td><?php echo $row->tanggal_pembelian;?></td>
+      <td><?php echo $row->status_pembelian;?></td>
+      <td><?php echo $row->total_pembelian;?></td>
+      <td> 
+        <a href="<?php echo base_url(); ?>Detail/index/<?php echo $row->id_pembelian;?>" class="btn btn-info">detail</a>
+        <a href="<?php echo base_url(); ?>Pembelian/delete/<?php echo $row->id_pembelian;?>" class="btn btn-danger">hapus</a> 
+
+        <?php if($row->status_pembelian =="sudah kirim pembayaran silahkan tunggu update resi"): ?>
+          <a href="index.php?halaman=pembayaran&id=<?php echo $pecah['id_pembelian']?>" class="btn btn-success">Lihat Pembayaran</a>
+
+        <?php endif ?>
+
       </td>
+      
     </tr>
    <?php $no++;
                 endforeach;?>

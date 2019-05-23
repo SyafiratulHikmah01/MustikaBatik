@@ -6,6 +6,10 @@ class Auth extends CI_Controller {
 		parent::__construct();
 		$this->load->helper(array('url'));
 		$this->load->model('model_produk');
+
+		if ( ! $this->session->logged_in ) {
+					redirect('loginproses/login');
+				}
 	}
 
 	public function index ()

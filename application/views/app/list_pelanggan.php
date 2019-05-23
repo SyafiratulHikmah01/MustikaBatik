@@ -36,7 +36,7 @@
         <div class="sidebar-brand-text mx-3">ADMIN </div>
       </a>
 
-      <!-- Divider -->
+     <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
@@ -50,7 +50,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="Auth/">
+        <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Profile</span></a>
       </li>
@@ -63,6 +63,26 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Produk</span></a>
       </li>
+
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url('Testimoni/index'); ?>">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Testimoni</span></a>
+      </li>
+
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url('Pembelian/index'); ?>">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Pembelian</span></a>
+      </li>
+
+        <hr class="sidebar-divider my-0">
 
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url('Pelanggan/index'); ?>">
