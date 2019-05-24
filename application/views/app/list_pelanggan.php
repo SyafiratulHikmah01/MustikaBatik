@@ -159,7 +159,7 @@
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <a class="btn btn-danger square-btn-adjust" href="<?php echo site_url('LoginProses/logout') ?>">
                 
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
@@ -205,8 +205,8 @@
       <td><?php echo $row->telepon_pelanggan;?></td>
 
       <td> <a href="<?php echo base_url(); ?>Pelanggan/delete/<?php echo $row->id_pelanggan;?>" class="btn btn-danger">hapus</a> </td>
-      <td> <a href="<?php echo base_url(); ?>Pelanggan/edit/<?php echo $row->id_pelanggan;?>" class="btn btn-warning">edit</a> </td>
-      </td>
+      <!-- <td> <a href="<?php echo base_url(); ?>Pelanggan/edit/<?php echo $row->id_pelanggan;?>" class="btn btn-warning">edit</a> </td> -->
+      
     </tr>
    <?php $no++;
                 endforeach;?>

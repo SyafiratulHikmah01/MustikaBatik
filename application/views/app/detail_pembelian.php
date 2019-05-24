@@ -50,7 +50,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="Auth/">
+        <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Profile</span></a>
       </li>
@@ -64,17 +64,30 @@
           <span>Produk</span></a>
       </li>
 
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Pelanggan/index'); ?>">
+        <a class="nav-link" href="<?php echo base_url('Testimoni/index'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Pelanggan</span></a>
+          <span>Testimoni</span></a>
       </li>
+
+      <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url('Pembelian/index'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Pembelian</span></a>
+      </li>
+
+        <hr class="sidebar-divider my-0">
+
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url('Pelanggan/index'); ?>">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Pelanggan</span></a>
       </li>
 
       <!-- Divider -->
