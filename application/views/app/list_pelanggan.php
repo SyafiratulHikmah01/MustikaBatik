@@ -181,8 +181,8 @@
           <!-- Content Row -->
           <div class="row">
 
-            <p> <a href="<?php echo base_url()?>Pelanggan/input" class="btn btn-primary"> Tambah Pelanggan </a> </p>
-            <table class="table table-striped">
+            <!-- <p> <a href="<?php echo base_url()?>Pelanggan/input" class="btn btn-primary"> Tambah Pelanggan </a> </p>
+            <table class="table table-striped"> -->
   <thead>
     <tr>
       <th scope="col">ID</th>
