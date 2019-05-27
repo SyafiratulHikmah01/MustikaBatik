@@ -14,7 +14,7 @@ class Testimoni extends CI_Controller {
 		$this->load->view('app/list_testimoni',$data);
 	}
 	function update(){
-		$id = $this->input->post('nama');
+		$id = $this->input->post('id');
 		//var_dump($id);
 		$insert=$this->model_testimoni->update(array(
 

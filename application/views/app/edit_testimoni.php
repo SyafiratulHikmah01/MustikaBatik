@@ -182,11 +182,13 @@
 
     <form method="POST" action="<?php echo base_url()?>Testimoni/update" enctype="multipart/form-data">
 
-        Nama <br/><input type="text" name="nama" size="135" maxlength="10" value="<?php echo $user[0]['nama']; ?>"> <br/><br/>
+        ID <br/><input type="text" name="id" size="135" value="<?php echo $user[0]['id']; ?>"> <br/><br/>
 
-        Gambar <br/><input type="text" name="gambar" size="135" maxlength="10" value="<?php echo $user[0]['gambar']; ?>"> <br/><br/>
+        Nama <br/><input type="text" name="nama" size="135" value="<?php echo $user[0]['nama']; ?>"> <br/><br/>
 
-        Deskripsi<br/><input type="text" name="deskripsi" size="135" maxlength="10" value="<?php echo $user[0]['deskripsi']; ?>"> <br/><br/>
+        Gambar <br/><input type="text" name="gambar" size="135" value="<?php echo $user[0]['gambar']; ?>"> <br/><br/>
+
+        Deskripsi<br/><input type="text" name="deskripsi" size="135" value="<?php echo $user[0]['deskripsi']; ?>"> <br/><br/>
 
          
          <input type="submit" name="btnTambah" value="Simpan">

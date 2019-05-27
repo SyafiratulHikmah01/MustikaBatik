@@ -53,7 +53,7 @@ class Auth extends CI_Controller {
 	}
 	
 	function update(){
-		$id = $this->input->post('nama_produk');
+		$id = $this->input->post('id_produk');
 		//var_dump($id);
 		$insert=$this->model_produk->update(array(
 

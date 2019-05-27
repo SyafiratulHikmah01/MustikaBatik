@@ -28,7 +28,7 @@ class model_testimoni extends CI_Model {
 	}
 
 	function update($data=array(),$id){
-		$this->db->where('nama',$id);
+		$this->db->where('id',$id);
 		return $this->db->update('testimoni',$data);
 	}
 }

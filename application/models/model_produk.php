@@ -28,7 +28,7 @@ class model_produk extends CI_Model {
 	}
 
 	function update($data=array(),$id){
-		$this->db->where('nama_produk',$id);
+		$this->db->where('id_produk',$id);
 		return $this->db->update('produk',$data);
 	}
 }
