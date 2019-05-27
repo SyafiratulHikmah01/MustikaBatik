@@ -203,7 +203,7 @@
 			<div class="col-md-4">
 				<h3>Pengiriman</h3>
 				<strong>Mustika Batik Banyuwangi</strong><br>
-				Ongkir: Rp. <?php echo $user[0]->id_ongkir;?><br>
+				Ongkir: Rp. <?php echo $user[0]->tarif;?><br>
 				Alamat: <?php echo $user[0]->alamat_pengiriman;?>
 			</div>
 

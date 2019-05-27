@@ -21,7 +21,7 @@ class Detail extends CI_Controller {
 	// 	$this->load->view('app/detail_pembelian',$data);
 	// }
 
-	function index()
+	function index($id)
 	{
 	$id = $this->uri->segment (3);
 	//var dump (%id)
@@ -35,9 +35,6 @@ class Detail extends CI_Controller {
 	$data['id_pelanggan'] = $this->model_detail->get_pelanggan();
 	$data['id_produk'] = $this->model_detail->get_produk();
 	$data['id_pembelian_produk'] = $this->model_detail->get_pembelianproduk();
-
-	
-
 	
 	$this->load->view("app/detail_pembelian", $data);
 	
