@@ -50,7 +50,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?php echo base_url('Profile/index'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Profile</span></a>
       </li>
@@ -175,7 +175,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-           <h2> <p align="center"> Produk Mustika Batik Banyuwangi </p> </h2>
+           <h2> <p align="center"> Data Produk Mustika Batik </p> </h2>
           <!-- Page Heading -->
         
           <!-- Content Row -->
@@ -202,7 +202,9 @@
       <td><?php echo $row->nama_produk;?></td>
       <td><?php echo $row->harga_produk;?></td>
       <td><?php echo $row->berat_produk;?></td>
-      <td><?php echo $row->foto_produk;?></td>
+      <td>
+          <img src="<?php base_url(); ?>/foto_produk/<?php echo $row->foto_produk;?>" width ="100" > 
+      </td>
       <td><?php echo $row->deskripsi_produk;?></td>
       <td> <a href="<?php echo base_url(); ?>Auth/delete/<?php echo $row->id_produk;?>" class="btn btn-danger">hapus</a> </td>
       <td> <a href="<?php echo base_url(); ?>Auth/edit/<?php echo $row->id_produk;?>" class="btn btn-warning">edit</a> </td>

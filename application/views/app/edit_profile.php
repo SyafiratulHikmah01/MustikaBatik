@@ -37,7 +37,6 @@
       </a>
 
       <!-- Divider -->
-     <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
@@ -176,27 +175,25 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-           <h2> <p align="center"> Tambah Data Produk </p> </h2>
+           <h2> <p align="center"> Update Data Profile </p> </h2>
           <!-- Page Heading -->
         
           <!-- Content Row -->
           <div class="row">
 
-    <form method="POST" action="input" enctype="multipart/form-data">
-        
-        Nama Produk <br/><input type="text" name="nama_produk" size="150" maxlength="100" value="<?php if(isset($data)) { echo $data[0]->nama_produk; } ?>"><br/><br/>
+    <form method="POST" action="<?php echo base_url()?>Profile/update" enctype="multipart/form-data">
 
-        Harga Produk <br/><input type="text" name="harga_produk" size="150" maxlength="10" value="<?php if(isset($data)) { echo $data[0]->harga_produk; } ?>"><br/><br/>
+        ID <br/><input type="text" name="id" size="135" value="<?php echo $user[0]['id']; ?>"> <br/><br/>
 
-        Berat Produk <br/><input type="text" name="berat_produk" size="150" maxlength="10" value="<?php if(isset($data)) { echo $data[0]->berat_produk; } ?>"><br/><br/>
+        Judul <br/><input type="text" name="judul" size="135" value="<?php echo $user[0]['judul']; ?>"> <br/><br/>
 
-        Gambar Produk <br/><input type="text" name="foto_produk" size="150" maxlength="10" value="<?php if(isset($data)) { echo $data[0]->foto_produk; } ?>"><br/><br/>
+        Deskripsi <br/><input type="text" name="deskripsi" size="135" value="<?php echo $user[0]['deskripsi']; ?>"> <br/><br/>
 
-        Deskripsi Produk <br/><input type="text" name="deskripsi_produk" size="150" maxlength="150" value="<?php if(isset($data)) { echo $data[0]->deskripsi_produk; } ?>"><br/><br/>
-
-          
-         <input type="submit" name="btnTambah" value="Simpan"/>
-         <button> <a href="<?php echo base_url()?>Auth/"> Kembali </button></a>
+        Foto <br/><input type="text" name="foto" size="135" value="<?php echo $user[0]['foto']; ?>"> <br/><br/>
+    
+         
+         <input type="submit" name="btnTambah" value="Simpan">
+         <button> <a href="<?php echo base_url()?>Profile/"> Kembali </button></a>
     </form>
 
 

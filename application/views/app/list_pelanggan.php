@@ -50,7 +50,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?php echo base_url('Profile/index'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Profile</span></a>
       </li>
@@ -175,7 +175,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-           <h2> <p align="center"> Produk Mustika Batik Banyuwangi </p> </h2>
+           <h2> <p align="center"> Data Pelanggan Mustika Batik </p> </h2>
           <!-- Page Heading -->
         
           <!-- Content Row -->

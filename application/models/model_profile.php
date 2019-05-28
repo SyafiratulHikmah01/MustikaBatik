@@ -22,12 +22,12 @@ class model_profile extends CI_Model {
 	}
 
 	function get_data_edit($id){
-		$query = $this->db->query("SELECT * FROM profile where id_profile='$id'");
+		$query = $this->db->query("SELECT * FROM profile where id='$id'");
 		return $query->result_array();
 	}
 
 	function update($data=array(),$id){
-		$this->db->where('judul', $id);
+		$this->db->where('id', $id);
 		return $this->db->update('profile', $data);
 	}
 }
