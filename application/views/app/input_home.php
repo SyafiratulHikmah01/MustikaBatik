@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Mustika Batik</title>
+  <title>Input Content Home</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -71,17 +71,6 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Pelanggan</span></a>
       </li>
-
-      
-
-
-
-      
-
-       <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -167,55 +156,41 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <h2><p align="center"> Content Home Mustika Batik </p></h2>
+           <h2> <p align="center"> Tambah Content Home </p> </h2>
           <!-- Page Heading -->
         
           <!-- Content Row -->
-<?php if($this->session->flashdata('success')){
-
-        echo '<div class="alert alert-success alert-message">';
-        echo $this->session->flashdata('success');
-        echo '</div>';
-} ?>
           <div class="row">
 
-            <p> <a href="<?php echo base_url()?>home/input" class="btn btn-primary"> Tambah Content </a> </p>
-            <table class="table table-striped">
+    <form method="POST" action="input" enctype="multipart/form-data">
+        
+        Nama Produk <br/><input type="text" name="nama_produk" size="150" maxlength="100" value="<?php if(isset($data)) { echo $data[0]->nama_produk; } ?>"><br/><br/>
 
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nama Produk</th>
-      <th scope="col">Harga Produk</th>
-      <th scope="col">Berat Produk</th>
-      <th scope="col">Foto Produk</th>
-      <th scope="col">Deskripsi Produk</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
-                $no = 1;
-                foreach ($data as $row): ?>
-    <tr>
-      <th scope="row"><?php echo $no;?></th>
-      <td><?php echo $row->nama_produk;?></td>
-      <td><?php echo $row->harga_produk;?></td>
-      <td><?php echo $row->berat_produk;?></td>
-      <td><?php echo $row->foto_produk;?></td>
-      <td><?php echo $row->deskripsi_produk;?></td>
-      <td> <a href="<?php echo base_url(); ?>Home/delete/<?php echo $row->id_produk;?>" class="btn btn-danger">hapus</a> </td>
-      <td> <a href="<?php echo base_url(); ?>Home/edit/<?php echo $row->id_produk;?>" class="btn btn-warning">edit</a> </td>
-      </td>
-    </tr>
-   <?php $no++;
-                endforeach;?>
-  </tbody>
-</table>
+        Harga Produk <br/><input type="text" name="harga_produk" size="150" maxlength="10" value="<?php if(isset($data)) { echo $data[0]->harga_produk; } ?>"><br/><br/>
 
+        Berat Produk <br/><input type="text" name="berat_produk" size="150" maxlength="10" value="<?php if(isset($data)) { echo $data[0]->berat_produk; } ?>"><br/><br/>
+
+        Gambar Produk <br/><input type="text" name="foto_produk" size="150" maxlength="10" value="<?php if(isset($data)) { echo $data[0]->foto_produk; } ?>"><br/><br/>
+
+        Deskripsi Produk <br/><input type="text" name="deskripsi_produk" size="150" maxlength="150" value="<?php if(isset($data)) { echo $data[0]->deskripsi_produk; } ?>"><br/><br/>
+
+          
+         <input type="submit" name="btnTambah" value="Simpan"/>
+         <button> <a href="<?php echo base_url()?>Home/"> Kembali </button></a>
+    </form>
+
+
+
+
+   
+            
           </div>
+
           <!-- Content Row -->
 
           <div class="row">
+
+        
             
           </div>
 
@@ -273,7 +248,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- Bootstrap core JavaScript-->
   <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
