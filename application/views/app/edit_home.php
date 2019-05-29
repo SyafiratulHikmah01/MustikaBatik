@@ -50,7 +50,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Profile/index'); ?>">
+        <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Profile</span></a>
       </li>
@@ -65,24 +65,6 @@
       </li>
 
         <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Testimoni/index'); ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Testimoni</span></a>
-      </li>
-
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Pembelian/index'); ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Pembelian</span></a>
-      </li>
-
-       <hr class="sidebar-divider my-0">
 
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url('Pelanggan/index'); ?>">
@@ -182,17 +164,16 @@
           <div class="row">
 
     <form method="POST" action="<?php echo base_url()?>Home/update" enctype="multipart/form-data">
-        ID Produk<br/><input type="text" name="id_produk" size="135" value="<?php echo $user[0]['id_produk']; ?>"> <br/><br/>
 
-        Nama Produk<br/><input type="text" name="nama_produk" size="135" value="<?php echo $user[0]['nama_produk']; ?>"> <br/><br/>
+        Nama Produk<br/><input type="text" name="nama_produk" size="135" maxlength="10" value="<?php echo $user[0]['nama_produk']; ?>"> <br/><br/>
 
-        Harga Produk<br/><input type="text" name="harga_produk" size="135" value="<?php echo $user[0]['harga_produk']; ?>"> <br/><br/>
+        Harga Produk<br/><input type="text" name="harga_produk" size="135" maxlength="10" value="<?php echo $user[0]['harga_produk']; ?>"> <br/><br/>
 
-        Berat Produk<br/><input type="text" name="berat_produk" size="135" value="<?php echo $user[0]['berat_produk']; ?>"> <br/><br/>
+        Berat Produk<br/><input type="text" name="berat_produk" size="135" maxlength="10" value="<?php echo $user[0]['berat_produk']; ?>"> <br/><br/>
 
-        Gambar Produk<br/><input type="text" name="foto_produk" size="135" value="<?php echo $user[0]['foto_produk']; ?>"> <br/><br/>
+        Gambar Produk<br/><input type="text" name="foto_produk" size="135" maxlength="10" value="<?php echo $user[0]['foto_produk']; ?>"> <br/><br/>
 
-        Deskripsi Produk<br/><input type="text" name="deskripsi_produk" size="135" value="<?php echo $user[0]['deskripsi_produk']; ?>"> <br/><br/>
+        Deskripsi Produk<br/><input type="text" name="deskripsi_produk" size="135" maxlength="10" value="<?php echo $user[0]['deskripsi_produk']; ?>"> <br/><br/>
     
          
          <input type="submit" name="btnTambah" value="Simpan">

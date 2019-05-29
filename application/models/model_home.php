@@ -28,7 +28,7 @@ class model_home extends CI_Model {
 	}
 
 	function update($data=array(),$id){
-		$this->db->where('id_produk',$id);
+		$this->db->where('nama_produk',$id);
 		return $this->db->update('home',$data);
 	}
 }

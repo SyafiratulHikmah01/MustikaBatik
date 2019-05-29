@@ -66,24 +66,6 @@
 
       <hr class="sidebar-divider my-0">
 
-              <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Testimoni/index'); ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Testimoni</span></a>
-      </li>
-
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Pembelian/index'); ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Pembelian</span></a>
-      </li>
-
-       <hr class="sidebar-divider my-0">
-
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url('Pelanggan/index'); ?>">
@@ -176,13 +158,13 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-           <h2> <p align="center">Data Profile Mustika Batik </p> </h2>
+           <h2> <p align="center"> Profile Mustika Batik Banyuwangi </p> </h2>
           <!-- Page Heading -->
         
           <!-- Content Row -->
           <div class="row">
 
-            <p> <a href="<?php echo base_url()?>Profile/input" class="btn btn-primary"> Tambah Profile </a> </p>
+            <p> <a href="<?php echo base_url()?>Auth/input" class="btn btn-primary"> Tambah Profile </a> </p>
             <table class="table table-striped">
   <thead>
     <tr>
@@ -204,8 +186,8 @@
       <td><?php echo $row->deskripsi;?></td>
       <td><?php echo $row->foto;?></td>
       
-      <td> <a href="<?php echo base_url(); ?>Profile/delete/<?php echo $row->id;?>" class="btn btn-danger">hapus</a> </td>
-      <td> <a href="<?php echo base_url(); ?>Profile/edit/<?php echo $row->id;?>" class="btn btn-warning">edit</a> </td>
+      <td> <a href="<?php echo base_url(); ?>Auth/delete/<?php echo $row->id;?>" class="btn btn-danger">hapus</a> </td>
+      <td> <a href="<?php echo base_url(); ?>Auth/edit/<?php echo $row->id;?>" class="btn btn-warning">edit</a> </td>
       </td>
     </tr>
    <?php $no++;
