@@ -235,7 +235,7 @@
 			<td scope="row"><?php echo $no;?></td>
 			<td><?php echo $row->nama_produk;?></td>
 			<td>
-			<img src="foto_produk/<?php echo $row->foto_produk;?>" width ="100" > 
+			<img src="<?php echo base_url(); ?>/foto_produk/<?php echo $row->foto_produk;?>" width ="100" >
 			 </td>
 			<td><?php echo $row->harga_produk;?></td>
 			<td><?php echo $row->jumlah;?></td>
