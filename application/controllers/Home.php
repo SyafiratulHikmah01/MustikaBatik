@@ -53,7 +53,7 @@ public function index ()
 	}
 	
 	function update(){
-		$id = $this->input->post('nama_produk');
+		$id = $this->input->post('id_produk');
 		//var_dump($id);
 		$insert=$this->model_home->update(array(
 
@@ -63,9 +63,7 @@ public function index ()
 				'foto_produk' => $this->input-> post('foto_produk'),
 				'deskripsi_produk' => $this->input-> post('deskripsi_produk')
 			), $id);
-					$this->session->set_flashdata('success', 'data telah berhasil di update');
-
-		redirect('');
+		redirect('Home');
         }
 
 }

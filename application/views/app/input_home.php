@@ -171,7 +171,7 @@
         Berat Produk <br/><input type="text" name="berat_produk" size="150" maxlength="10" value="<?php if(isset($data)) { echo $data[0]->berat_produk; } ?>"><br/><br/>
 
         Gambar Produk <br/><input type="text" name="foto_produk" size="150" maxlength="10" value="<?php if(isset($data)) { echo $data[0]->foto_produk; } ?>"><br/><br/>
-
+        
         Deskripsi Produk <br/><input type="text" name="deskripsi_produk" size="150" maxlength="150" value="<?php if(isset($data)) { echo $data[0]->deskripsi_produk; } ?>"><br/><br/>
 
           
