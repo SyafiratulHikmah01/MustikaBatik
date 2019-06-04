@@ -7,9 +7,9 @@ class Profile extends CI_Controller{
 		$this->load->helper(array('url'));
 		$this->load->model('model_profile');
 
-		// if(! $this->session->logged_in){
-		// 	redirect('loginproses/login');
-		// }
+		if(! $this->session->logged_in){
+			redirect('loginproses/login');
+		}
 
 	}
 

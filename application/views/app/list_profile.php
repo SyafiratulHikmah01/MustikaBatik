@@ -68,6 +68,24 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url('Testimoni/index'); ?>">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Testimoni</span></a>
+      </li>
+
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url('Pembelian/index'); ?>">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Pembelian</span></a>
+      </li>
+
+        <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url('Pelanggan/index'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Pelanggan</span></a>
@@ -142,7 +160,7 @@
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="btn btn-danger square-btn-adjust" href="<?php echo site_url('LoginProses/logout') ?>">
                 
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
