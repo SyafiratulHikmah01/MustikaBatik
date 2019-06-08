@@ -240,6 +240,7 @@
 								<span class="stext-105 cl3">
 									Rp. <?php echo number_format($row->harga_produk);?>
 								</span>
+							</br>
 
 								<span class="stext-105 cl3">
 									<a class="btn btn-primary" href="#">Beli</a>
