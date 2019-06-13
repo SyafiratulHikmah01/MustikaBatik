@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Mustika Batik</title>
+  <title>Input Produk</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -50,7 +50,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Profile/index'); ?>">
+        <a class="nav-link" href="<?php echo base_url('Profile'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Profile</span></a>
       </li>
@@ -64,27 +64,8 @@
           <span>Produk</span></a>
       </li>
 
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Testimoni/index'); ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Testimoni</span></a>
-      </li>
-
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('Pembelian/index'); ?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Pembelian</span></a>
-      </li>
-
         <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url('Pelanggan/index'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -160,7 +141,7 @@
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="btn btn-danger square-btn-adjust" href="<?php echo site_url('LoginProses/logout') ?>">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
@@ -176,43 +157,26 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-           <h2> <p align="center"> Profile Mustika Batik Banyuwangi </p> </h2>
+           <h2> <p align="center"> Update Profile </p> </h2>
           <!-- Page Heading -->
         
           <!-- Content Row -->
           <div class="row">
 
-            <p> <a href="<?php echo base_url()?>Profile/input" class="btn btn-primary"> Tambah Profile </a> </p>
-            <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Judul</th>
-      <th scope="col">Deskripsi</th>
-      <th scope="col">Foto</th>
-     
-    </tr>
-  </thead>
-  <tbody>
-    <?php
-                $no = 1;
-                foreach ($data as $row): ?>
-    <tr>
-      <th scope="row"><?php echo $no;?></th>
-     
-      <td><?php echo $row->judul;?></td>
-      <td><?php echo $row->deskripsi;?></td>
-      <td><img src="<?php echo base_url(); ?>/foto_profile/<?php echo $row->foto;?>" width ="100" ></td>
+    <form method="POST" action="<?php echo base_url()?>Profile/update" enctype="multipart/form-data">
 
-      
-      <td> <a href="<?php echo base_url(); ?>Profile/delete/<?php echo $row->id;?>" class="btn btn-danger">hapus</a> </td>
-      <td> <a href="<?php echo base_url(); ?>Profile/edit/<?php echo $row->id;?>" class="btn btn-warning">edit</a> </td>
-      </td>
-    </tr>
-   <?php $no++;
-                endforeach;?>
-  </tbody>
-</table>
+        judul<br/><input type="text" name="judul" size="135" maxlength="10" value="<?php echo $user[0]['judul']; ?>"> <br/><br/>
+
+        deskripsi<br/><input type="text" name="deskripsi" size="135" maxlength="10" value="<?php echo $user[0]['deskripsi']; ?>"> <br/><br/>
+
+        Foto<br/><input type="text" name="foto" size="135" maxlength="10" value="<?php echo $user[0]['foto']; ?>"> <br/><br/>
+
+       
+         
+         <input type="submit" name="btnTambah" value="Simpan">
+         <button> <a href="<?php echo base_url()?>Profile/"> Kembali </button></a>
+    </form>
+
 
 
 
@@ -282,7 +246,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- Bootstrap core JavaScript-->
   <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
