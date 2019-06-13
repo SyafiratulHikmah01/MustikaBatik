@@ -68,11 +68,7 @@
 					<div class="wrap-icon-header flex-w flex-r-m">
 
 
-						<div class="icon-header-item cl2 hov-cl1  p-r-11 icon-header-noti " data-notify="0
-						">
-						<a href="<?php echo base_url('blog/index'); ?>"><i class="zmdi zmdi-shopping-cart"></i>
-
-						<?php
+						<div class="icon-header-item cl2 hov-cl1  p-r-11 icon-header-noti " data-notify="						<?php
 
 						$jml = 0;
 
@@ -81,6 +77,10 @@
 
 						<?php endforeach; ?>
 						<?php echo "$jml"; ?>
+						">
+						<a href="<?php echo base_url('cart/index'); ?>"><i class="zmdi zmdi-shopping-cart"></i>
+
+
 					</a>
 
 						</div>
