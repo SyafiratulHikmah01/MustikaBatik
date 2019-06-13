@@ -5,6 +5,8 @@ class Produk extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->helper(array('url'));
+		$this->load->library(array('cart'));
+
 		$this->load->model('modelproduk');
 	}
 	public function index ()

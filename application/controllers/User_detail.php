@@ -5,6 +5,7 @@ class User_detail extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->helper(array('form','url'));
+		$this->load->library('cart');
 		$this->load->model('User_modeldetail');
 		#
 	}

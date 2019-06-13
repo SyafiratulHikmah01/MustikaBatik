@@ -18,4 +18,12 @@ class User_modeldetail extends CI_Model {
 		//return $query->result_array();
 	}
 
+	function get_where($table = null, $where = null)
+	{
+		$this->db->from($table);
+		$this->db->where($where);
+
+		return $this->db->get();
+	}
+
 }

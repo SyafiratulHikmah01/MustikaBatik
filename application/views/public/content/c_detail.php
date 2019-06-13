@@ -58,7 +58,10 @@
 					<td></td><td width="1000" height="70px">  </td>
 			</tr>
 			<tr>
-					<td></td><td width="1000">  &emsp; <a href="#" class="btn btn-danger"> Beli</a> <a href="#" class="btn btn-warning">Tambah ke Keranjang</a> </td>
+					<td></td><td width="1000">  &emsp; 
+
+					 <a href="#" class="btn btn-danger"> Beli</a>
+					 <a href="<?php echo base_url().'cart/add/'.$data[0]->id_produk ?>" class="btn btn-warning">Tambah ke Keranjang</a> </td>
 			</tr>
 			<tr>
 					<td></td><td width="1000" height="100px">  </td>
