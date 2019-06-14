@@ -44,4 +44,31 @@ class Cart extends CI_Controller {
 
 	}
 
+	public function update_barang()
+	{
+
+
+			$data = array(
+				'qty' => $this->input->post('qty', TURE),
+				'rowid' => $this->uri->segment(3)
+			);
+
+			$this->cart->update($data);
+
+			redirect('cart/index');
+
+
+	}
+
+	public function delete_cart()
+	{
+
+		$rowid = $this->uri->segment(3);
+
+		$this->cart->remove($rowid);
+
+		redirect('cart/index');
+
+	}
+
 }
