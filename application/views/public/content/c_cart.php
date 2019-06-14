@@ -23,7 +23,7 @@
 								<tr class="table_row">
 									<td class="column-1"> <?= $i++; ?> </td>
 									<td class="column-2"><?= $key['name'] ?></td>
-									<td class="column-3"><?= $key['berat'] ?></td>
+									<td class="column-3"><?= $key['berat'] ?>g</td>
 									<td class="column-4">
 <?php echo $key['qty'] ?> Barang
 
@@ -63,6 +63,11 @@
 
 <!-- Modal -->
 <div class="modal fade" id="<?= $key['rowid']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<br>
+	<br>
+	<br>
+	<br>
+
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -130,7 +135,7 @@
 
 							<div class="size-209">
 								<span class="mtext-110 cl2">
-									$79.65
+Rp.<?= number_format($key['qty']*$key['price']) ?>
 								</span>
 							</div>
 						</div>
@@ -144,7 +149,7 @@
 
 							<div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
 								<p class="stext-111 cl6 p-t-2">
-									There are no shipping methods available. Please double check your address, or contact us if you need any help.
+									Untuk Ongkir Dapat Di lihat di sini <a href="https://rajaongkir.com/" target="_blank">"Raja Ongkir"</a>
 								</p>
 								
 								<div class="p-t-15">
@@ -153,27 +158,35 @@
 									</span>
 
 									<div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
-										<select class="js-select2" name="time">
-											<option>Select a country...</option>
-											<option>USA</option>
-											<option>UK</option>
+
+										<select class="js-select2" name="kota" id="kota">
+											<option>Pilih Kota</option>
+											<option>Pacitan</option>
+											<option>Ponorogo</option>
+											<option>Trenggalek</option>
+											<option>Situbondo</option>
+											<option>Bondowoso</option>
+											<option>Banyuwangi</option>
+											<option>Jember</option>
+											<option>Lumajang</option>
+											<option>Tulungagung</option>
+											<option>Tuban</option>
+											<option>Sidoarjo</option>
+											<option>Bangil</option>
 										</select>
 										<div class="dropDownSelect2"></div>
 									</div>
 
 									<div class="bor8 bg0 m-b-12">
-										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state" placeholder="State /  country">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state" placeholder="Alamat">
 									</div>
 
 									<div class="bor8 bg0 m-b-22">
-										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="postcode" placeholder="Postcode / Zip">
+
+										<input type="hidden" name="harga" id="harga" value="<?=$key['qty']*$key['price'] ?>">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="number" name="ongkir" id="ongkir" placeholder="Ongkir " onChange="gettotal_harga()">
 									</div>
-									
-									<div class="flex-w">
-										<div class="flex-c-m stext-101 cl2 size-115 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer">
-											Update Totals
-										</div>
-									</div>
+
 										
 								</div>
 							</div>
@@ -187,16 +200,23 @@
 							</div>
 
 							<div class="size-209 p-t-1">
-								<span class="mtext-110 cl2">
-									Rp.<?php echo number_format($this->cart->total()); ?>
-
-								</span>
+									<div class="bor8 bg0 m-b-22">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="number" name="total_harga" placeholder="Harga Total" readonly="" id="total_harga">
+									</div>
 							</div>
 						</div>
-
+       <?php if ($this->session->userdata('id')): ?>
 						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
 							Proceed to Checkout
 						</button>
+						</a>
+             <?php else: ?>
+						<a href="#" data-toggle="modal" data-target="#login-modal" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+							CHECKOUT
+						</a>
+
+          <?php endif ?>
+
 					</div>
 				</div>
 			</div>

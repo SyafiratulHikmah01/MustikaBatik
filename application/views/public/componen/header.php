@@ -11,10 +11,18 @@
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
 						</a>
-
+       <?php if ($this->session->userdata('id')): ?>
+                  <a href="<?php echo base_url()?>pelanggan/logout"   class="flex-c-m trans-04 p-lr-25">Logout</a>
+						<a href="#" class="flex-c-m trans-04 p-lr-25">
+<?php echo $this->session->userdata('nama'); ?>
+						</a>
+             <?php else: ?>
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							My Account
 						</a>
+                  <a href="#" data-toggle="modal" data-target="#login-modal" class="flex-c-m trans-04 p-lr-25">Sign In</a>
+          <?php endif ?>
+
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							EN
@@ -26,7 +34,38 @@
 					</div>
 				</div>
 			</div>
+      <!-- Login Modal-->
+      <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true" class="modal fade">
+      	<br>
+      	<br>
+      	<br>
+      	<br>
+        <div role="document" class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 id="login-modalLabel" class="modal-title">Customer Login</h4>
+              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+            </div>
+          <div class="modal-body">
+              <form action="<?php echo base_url().'pelanggan/login/' ?>" method="POST">
+                <div class="form-group">
+                  <input id="email_modal" name="email_pelanggan" type="email_pelanggan" placeholder="email_pelanggan" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input id="password_modal" type="password_pelanggan" name="password_pelanggan" placeholder="password_pelanggan" class="form-control">
+                </div>
+   <p class="text-center">
+      <button class="btn btn-template-outlined" type="submit" name="submit" value="Submit"  ><i class="fa fa-sign-in"  ></i> Log in</button>
+                </p>
+              </form>
 
+              <p class="text-center text-muted">Not registered yet?</p>
+              <p class="text-center text-muted"><a href="customer-register.php"><strong>Register now</strong></a>! Mudah Sekali Hanya Memasukkan Beberapa datalalu anda dapat mengaksess seluruh fitur kami!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Login modal end-->
 			<div class="wrap-menu-desktop">
 				<nav class="limiter-menu-desktop container">
 					
@@ -66,8 +105,7 @@
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
-
-
+       <?php if ($this->session->userdata('id')): ?>
 						<div class="icon-header-item cl2 hov-cl1  p-r-11 icon-header-noti " data-notify="						<?php
 
 						$jml = 0;
@@ -84,6 +122,28 @@
 					</a>
 
 						</div>
+             <?php else: ?>
+
+						<div class="icon-header-item cl2 hov-cl1  p-r-11 icon-header-noti " data-notify="						<?php
+
+						$jml = 0;
+
+						foreach($this->cart->contents() as $key ):?>
+ 						<?php $jml += $key['qty']; ?>
+
+						<?php endforeach; ?>
+						<?php echo "$jml"; ?>
+						">
+						<a href="<?php echo base_url('cart/index'); ?>" data-toggle="modal" data-target="#login-modal"  ><i class="zmdi zmdi-shopping-cart"></i>
+
+
+					</a>
+
+						</div>
+
+          <?php endif ?>
+
+
 
 						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
@@ -204,3 +264,15 @@
 				</form>
 			</div>
 		</div>
+<?php  
+  if ($this->session->flashdata('alert'))
+   {
+      echo '<div class="alert alert-danger alert-message">';
+      echo $this->session->flashdata('alert');
+      echo '</div>';  # code...
+  } else if ($this->session->flashdata('success')) {
+      echo '<div class="alert alert-success alert-message">';
+      echo $this->session->flashdata('success');
+      echo '</div>';
+  }
+ ?>

@@ -98,5 +98,21 @@
 			})
 		});
 	</script>
+    <!-- hitung Total harga -->
+    <script type="text/javascript">
+      
+
+    document.getElementById("kota").onchange = notEmpty;
+
+
+   function gettotal_harga(){
+      var tot1=document.getElementById('ongkir').value;
+      var tot2=document.getElementById('harga').value;
+      var tot3=parseFloat(tot1)+ parseFloat(tot2);
+      
+      document.getElementById('total_harga').value=tot3;
+  
+   }
+</script>   
 <!--===============================================================================================-->
 	<script src="<?php echo base_url(); ?>assets3/js/main.js"></script>
