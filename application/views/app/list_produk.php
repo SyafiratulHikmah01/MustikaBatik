@@ -181,7 +181,7 @@
           <!-- Content Row -->
           <div class="row">
 
-            <p> <a href="<?php echo base_url()?>Auth/input" class="btn btn-primary"> Tambah Produk </a> </p>
+            <p> <a href="<?php echo base_url()?>Auth/tambah" class="btn btn-primary"> Tambah Produk </a> </p>
             <table class="table table-striped">
   <thead>
     <tr>

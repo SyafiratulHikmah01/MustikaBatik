@@ -22,18 +22,37 @@ class Auth extends CI_Controller {
 	}
 
 
-	function input(){
-		$this->load->view('app/input_produk');
+	// function input(){
+	// 	$this->load->view('app/input_produk');
 			
-			if (isset($_POST['btnTambah'])){
-			$data = $this->model_produk->input(array (
-			'nama_produk' => $this->input->post('nama_produk'),
-			'harga_produk' => $this->input->post('harga_produk'),
-			'berat_produk' => $this->input->post('berat_produk'),
-			'foto_produk' => $this->input->post('foto_produk'),
-			'deskripsi_produk' => $this->input->post('deskripsi_produk')));
-			redirect('Auth');
-		}
+	// 		if (isset($_POST['btnTambah'])){
+	// 		$data = $this->model_produk->input(array (
+	// 		'nama_produk' => $this->input->post('nama_produk'),
+	// 		'harga_produk' => $this->input->post('harga_produk'),
+	// 		'berat_produk' => $this->input->post('berat_produk'),
+	// 		'foto_produk' => $this->input->post('foto_produk'),
+	// 		'deskripsi_produk' => $this->input->post('deskripsi_produk')));
+	// 		redirect('Auth');
+	// 	}
+	// }
+
+	public function tambah(){
+		$data = array();
+		
+		if($this->input->post('submit')){ // Jika user menekan tombol Submit (Simpan) pada form
+			// lakukan upload file dengan memanggil function upload yang ada di GambarModel.php
+			$upload = $this->model_produk->upload();
+			
+			if($upload['result'] == "success"){ // Jika proses upload sukses
+				 // Panggil function save yang ada di GambarModel.php untuk menyimpan data ke database
+				$this->model_produk->save($upload);
+				
+				redirect('Auth'); // Redirect kembali ke halaman awal / halaman view data
+			}else{ // Jika proses upload gagal
+				$data['message'] = $upload['error']; // Ambil pesan error uploadnya untuk dikirim ke file form dan ditampilkan
+			}
+		}	
+		$this->load->view('app/input_produk', $data);
 	}
 
 	function delete($id){

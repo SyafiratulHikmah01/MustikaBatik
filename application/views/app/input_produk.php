@@ -182,7 +182,7 @@
           <!-- Content Row -->
           <div class="row">
 
-    <form method="POST" action="input" enctype="multipart/form-data">
+    <!-- <form method="POST" action="input" enctype="multipart/form-data">
         
         Nama Produk <br/><input type="text" name="nama_produk" size="150" maxlength="100" value="<?php if(isset($data)) { echo $data[0]->nama_produk; } ?>"><br/><br/>
 
@@ -197,13 +197,38 @@
           
          <input type="submit" name="btnTambah" value="Simpan"/>
          <button> <a href="<?php echo base_url()?>Auth/"> Kembali </button></a>
-    </form>
+    </form> -->
+
+    <?php echo form_open("Auth/tambah", array('enctype'=>'multipart/form-data')); ?>
+  <table cellpadding="8">
+    <tr>
+      <td>Nama Produk</td>
+      <td><input type="text" name="nama_produk" size="115" value="<?php echo set_value('nama_produk'); ?>"></td>
+    </tr>
+    <tr>
+      <td>Harga Produk</td>
+      <td><input type="text" name="harga_produk" size="115" value="<?php echo set_value('harga_produk'); ?>"></td>
+    </tr>
+    <tr>
+      <td>Berat Produk</td>
+      <td><input type="text" name="berat_produk" size="115" value="<?php echo set_value('berat_produk'); ?>"></td>
+    </tr>
+    <tr>
+      <td>Gambar Produk</td>
+      <td><input type="file" name="foto_produk"></td>
+    </tr>
+    <tr>
+      <td>Deskripsi Produk</td>
+      <td><input type="text" name="deskripsi_produk" size="115" value="<?php echo set_value('deskripsi_produk'); ?>"></td>
+    </tr>
+  </table>
+    </br>
+  <hr>
+<p align="center">  <input type="submit" name="submit" value="Simpan">
+  <a href="<?php echo base_url(); ?>"><input type="button" value="Batal"></a> </p>
+    <?php echo form_close(); ?>
 
 
-
-
-   
-            
           </div>
 
           <!-- Content Row -->
