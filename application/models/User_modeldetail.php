@@ -2,6 +2,11 @@
 class User_modeldetail extends CI_Model {
 	
 
+    function insert($table = '',$data = ''){
+    	$this->db->insert($table,$data);
+    }
+
+
     function get_data(){
 		$query = $this->db->query("SELECT * FROM produk");
 		return $query->result();
@@ -25,5 +30,7 @@ class User_modeldetail extends CI_Model {
 
 		return $this->db->get();
 	}
+
+
 
 }

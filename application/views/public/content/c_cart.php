@@ -135,7 +135,7 @@
 
 							<div class="size-209">
 								<span class="mtext-110 cl2">
-Rp.<?= number_format($key['qty']*$key['price']) ?>
+Rp.<?= number_format($this->cart->total()) ?>
 								</span>
 							</div>
 						</div>
@@ -156,7 +156,7 @@ Rp.<?= number_format($key['qty']*$key['price']) ?>
 									<span class="stext-112 cl8">
 										Calculate Shipping
 									</span>
-
+<form method="post" action="<?php echo base_url('cart/checkout'); ?>">
 									<div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
 
 										<select class="js-select2" name="kota" id="kota">
@@ -178,13 +178,13 @@ Rp.<?= number_format($key['qty']*$key['price']) ?>
 									</div>
 
 									<div class="bor8 bg0 m-b-12">
-										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state" placeholder="Alamat">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="alamat" placeholder="Alamat">
 									</div>
 
 									<div class="bor8 bg0 m-b-22">
 
-										<input type="hidden" name="harga" id="harga" value="<?=$key['qty']*$key['price'] ?>">
-										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="number" name="ongkir" id="ongkir" placeholder="Ongkir " onChange="gettotal_harga()">
+										<input type="hidden" name="harga" id="harga" value="<?=$this->cart->total() ?>">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="number" name="tarif" id="ongkir" placeholder="Ongkir " onChange="gettotal_harga()">
 									</div>
 
 										
@@ -201,21 +201,20 @@ Rp.<?= number_format($key['qty']*$key['price']) ?>
 
 							<div class="size-209 p-t-1">
 									<div class="bor8 bg0 m-b-22">
-										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="number" name="total_harga" placeholder="Harga Total" readonly="" id="total_harga">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="number" name="total" placeholder="Harga Total" readonly="" id="total_harga">
 									</div>
 							</div>
-						</div>
        <?php if ($this->session->userdata('id')): ?>
-						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Proceed to Checkout
-						</button>
-						</a>
+
+						<button type="submit" class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10" name="submit" value="Submit" >PROCEED CHECkOUT</button>
              <?php else: ?>
-						<a href="#" data-toggle="modal" data-target="#login-modal" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							CHECKOUT
-						</a>
+
+
+						<a href="#" class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10"  data-toggle="modal" data-target="#login-modal"> PROCEED CHECKOUT</a>
 
           <?php endif ?>
+						</div>
+ </form>
 
 					</div>
 				</div>

@@ -8,11 +8,10 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
-						</a>
+
        <?php if ($this->session->userdata('id')): ?>
                   <a href="<?php echo base_url()?>pelanggan/logout"   class="flex-c-m trans-04 p-lr-25">Logout</a>
+                  <a href="<?php echo base_url()?>Invoice/index"   class="flex-c-m trans-04 p-lr-25">History Pemesanan</a>
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 <?php echo $this->session->userdata('nama'); ?>
 						</a>
