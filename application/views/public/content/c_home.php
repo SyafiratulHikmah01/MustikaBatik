@@ -1,4 +1,4 @@
-		<div class="wrap-slick1">
+ 		<div class="wrap-slick1">
 			<div class="slick1">
 				<div class="item-slick1" style="  background-image: url(<?php echo base_url(); ?>foto_model/model1.jpg);">
 					<div class="container h-full">
@@ -210,7 +210,7 @@
 				</div> -->
 				
 				<!-- Search product -->
-				<div class="dis-none panel-search w-full p-t-10 p-b-15">
+				<!-- <div class="dis-none panel-search w-full p-t-10 p-b-15">
 					<div class="bor8 dis-flex p-l-15">
 						<button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
 							<i class="zmdi zmdi-search"></i>
@@ -218,10 +218,10 @@
 
 						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product" placeholder="Search">
 					</div>	
-				</div>
+				</div> -->
 
 				<!-- Filter -->
-				<div class="dis-none panel-filter w-full p-t-10">
+				<!-- <div class="dis-none panel-filter w-full p-t-10">
 					<div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
 						<div class="filter-col1 p-r-15 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">
@@ -407,7 +407,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 
 			<div class="row isotope-grid">

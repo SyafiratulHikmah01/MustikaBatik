@@ -1,5 +1,5 @@
 
-
+<!-- 
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 col-lg-3 p-b-50">
@@ -108,11 +108,11 @@
 						</div>
 					</form>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="p-t-40">
 				<div class="flex-c-m flex-w p-b-18">
-					<a href="#" class="m-all-1">
+					<!-- <a href="#" class="m-all-1">
 						<img src="<?php echo base_url(); ?>assets3/images/icons/icon-pay-01.png" alt="ICON-PAY">
 					</a>
 
@@ -132,10 +132,10 @@
 						<img src="<?php echo base_url(); ?>assets3/images/icons/icon-pay-05.png" alt="ICON-PAY">
 					</a>
 				</div>
-
+ -->
 				<p class="stext-107 cl6 txt-center">
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">MIF'17</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 				</p>

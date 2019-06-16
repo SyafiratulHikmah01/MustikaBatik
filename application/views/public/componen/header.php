@@ -69,7 +69,7 @@
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
+					<a href="<?php echo base_url()?>HomeUser/index" class="logo">
 						<img src="<?php echo base_url(); ?>assets3/images/icons/logo-01.png" alt="IMG-LOGO">
 					</a>
 
@@ -81,23 +81,23 @@
 							</li>
 
 							<li>
-								<a href="<?php echo base_url()?>Produk/index"">Shop</a>
+								<a href="<?php echo base_url()?>Produk/index">Shop</a>
 							</li>
 
-							<li class="label1" data-label1="hot">
+							<!-- <li class="label1" data-label1="hot">
 								<a href="shoping-cart.html">Features</a>
 							</li>
-
+ 
 							<li>
 								<a href="<?php echo base_url('blog/index'); ?>">Blog</a>
+							</li> -->
+
+							<li>
+								<a href="<?php echo base_url()?>ProfileUser/index">About</a>
 							</li>
 
 							<li>
-								<a href="about.html">About</a>
-							</li>
-
-							<li>
-								<a href="contact.html">Contact</a>
+								<a href="<?php echo base_url()?>TestimoniUser/index">Testimoni</a>
 							</li>
 						</ul>
 					</div>	
@@ -144,9 +144,9 @@
 
 
 
-						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+						<!-- <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
-						</a>
+						</a> -->
 					</div>
 				</nav>
 			</div>	
@@ -156,23 +156,55 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="<?php echo base_url(); ?>assets3/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="<?php echo base_url()?>HomeUser/index"><img src="<?php echo base_url(); ?>assets3/images/icons/logo-01.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
-			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-					<i class="zmdi zmdi-search"></i>
-				</div>
+			<div class="wrap-icon-header flex-w flex-r-m">
+       <?php if ($this->session->userdata('id')): ?>
+						<div class="icon-header-item cl2 hov-cl1  p-r-11 icon-header-noti " data-notify="						<?php
 
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
-					<i class="zmdi zmdi-shopping-cart"></i>
-				</div>
+						$jml = 0;
 
-				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
-					<i class="zmdi zmdi-favorite-outline"></i>
-				</a>
-			</div>
+						foreach($this->cart->contents() as $key ):?>
+ 						<?php $jml += $key['qty']; ?>
+
+						<?php endforeach; ?>
+						<?php echo "$jml"; ?>
+						">
+						<a href="<?php echo base_url('cart/index'); ?>"><i class="zmdi zmdi-shopping-cart"></i>
+
+
+					</a>
+
+						</div>
+             <?php else: ?>
+
+						<div class="icon-header-item cl2 hov-cl1  p-r-11 icon-header-noti " data-notify="						<?php
+
+						$jml = 0;
+
+						foreach($this->cart->contents() as $key ):?>
+ 						<?php $jml += $key['qty']; ?>
+
+						<?php endforeach; ?>
+						<?php echo "$jml"; ?>
+						">
+						<a href="<?php echo base_url('cart/index'); ?>" data-toggle="modal" data-target="#login-modal"  ><i class="zmdi zmdi-shopping-cart"></i>
+
+
+					</a>
+
+						</div>
+
+          <?php endif ?>
+
+
+
+						<!-- <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+							<i class="zmdi zmdi-favorite-outline"></i>
+						</a> -->
+					</div>
 
 			<!-- Button show menu -->
 			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
@@ -215,19 +247,19 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.html">Home</a>
-					<ul class="sub-menu-m">
+					<a href="<?php echo base_url()?>HomeUser/index">Home</a>
+					<!-- <ul class="sub-menu-m">
 						<li><a href="index.html">Homepage 1</a></li>
 						<li><a href="home-02.html">Homepage 2</a></li>
 						<li><a href="home-03.html">Homepage 3</a></li>
 					</ul>
 					<span class="arrow-main-menu-m">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</span>
+					</span> -->
 				</li>
 
 				<li>
-					<a href="product.html">Shop</a>
+					<a href="<?php echo base_url()?>Produk/index">Shop</a>
 				</li>
 
 				<li>
