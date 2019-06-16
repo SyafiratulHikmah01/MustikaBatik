@@ -6,9 +6,9 @@ class modelabout extends CI_Model {
  //    }
 
     function get_data(){
-		$query = $this->db->query("SELECT * FROM home");
+		$query = $this->db->query("SELECT * FROM profile");
 		return $query->result();
-		return $query->result_array();
+		// return $query->result_array();
 	}
 
 	// function get_data_detail($id){

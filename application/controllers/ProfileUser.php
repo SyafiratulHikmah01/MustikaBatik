@@ -14,8 +14,8 @@ class ProfileUser extends CI_Controller {
 	public function index()
 	{
 
-		// $data = array(
-		// 'data'=>$this->modelabout->get_data());
+		$data = array(
+		'data'=>$this->modelabout->get_data());
 		$data['content'] = 'public/content/c_about';
 		$this->load->view('index', $data);
 	}
