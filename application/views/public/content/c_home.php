@@ -1,3 +1,16 @@
+
+<?php  
+  if ($this->session->flashdata('alert'))
+   {
+      echo '<div class="alert alert-danger alert-message">';
+      echo $this->session->flashdata('alert');
+      echo '</div>';  # code...
+  } else if ($this->session->flashdata('success')) {
+      echo '<div class="alert alert-success alert-message">';
+      echo $this->session->flashdata('success');
+      echo '</div>';
+  }
+ ?>
  		<div class="wrap-slick1">
 			<div class="slick1">
 				<div class="item-slick1" style="  background-image: url(<?php echo base_url(); ?>foto_model/model1.jpg);">

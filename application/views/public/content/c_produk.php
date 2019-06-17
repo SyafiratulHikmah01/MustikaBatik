@@ -1,4 +1,15 @@
-
+<?php  
+  if ($this->session->flashdata('alert'))
+   {
+      echo '<div class="alert alert-danger alert-message">';
+      echo $this->session->flashdata('alert');
+      echo '</div>';  # code...
+  } else if ($this->session->flashdata('success')) {
+      echo '<div class="alert alert-success alert-message">';
+      echo $this->session->flashdata('success');
+      echo '</div>';
+  }
+ ?>
 	<!-- Product -->
 </br></br></br><br>
 	<section class="bg0 p-t-23 p-b-140">

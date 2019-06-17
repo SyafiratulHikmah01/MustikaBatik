@@ -14,6 +14,18 @@
 </head>
 
 <body>
+<?php  
+  if ($this->session->flashdata('alert'))
+   {
+      echo '<div class="alert alert-danger alert-message">';
+      echo $this->session->flashdata('alert');
+      echo '</div>';  # code...
+  } else if ($this->session->flashdata('success')) {
+      echo '<div class="alert alert-success alert-message">';
+      echo $this->session->flashdata('success');
+      echo '</div>';
+  }
+ ?>
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">
             <tr class="top">
