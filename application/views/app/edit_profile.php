@@ -165,11 +165,13 @@
 
     <form method="POST" action="<?php echo base_url()?>Profile/update" enctype="multipart/form-data">
 
-        judul<br/><input type="text" name="judul" size="135" maxlength="10" value="<?php echo $user[0]['judul']; ?>"> <br/><br/>
+        <!-- ID Produk<br/> --><input type="hidden" name="id" size="135" value="<?php echo $user[0]['id']; ?>"> <br/><br/>
 
-        deskripsi<br/><input type="text" name="deskripsi" size="135" maxlength="10" value="<?php echo $user[0]['deskripsi']; ?>"> <br/><br/>
+        judul<br/><input type="text" name="judul" size="135" maxlength="" value="<?php echo $user[0]['judul']; ?>"> <br/><br/>
 
-        Foto<br/><input type="text" name="foto" size="135" maxlength="10" value="<?php echo $user[0]['foto']; ?>"> <br/><br/>
+        deskripsi<br/><input type="text" name="deskripsi" size="135" maxlength="" value="<?php echo $user[0]['deskripsi']; ?>"> <br/><br/>
+
+        Foto<br/><input type="text" name="foto" size="135" maxlength="" value="<?php echo $user[0]['foto']; ?>"> <br/><br/>
 
        
          

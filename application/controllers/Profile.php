@@ -52,7 +52,6 @@ class Profile extends CI_Controller{
 		$id = $this->input->post('id');
 		//var_dump($id);
 		$insert=$this->model_profile->update(array(
-
 				'judul' => $this->input-> post('judul'),
 				'deskripsi' => $this->input-> post('deskripsi'),
 				'foto' => $this->input-> post('foto')),

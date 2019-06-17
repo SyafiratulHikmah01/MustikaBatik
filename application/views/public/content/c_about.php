@@ -1,8 +1,4 @@
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-color: maroon;">
-		<h2 class="ltext-105 cl0 txt-center">
-			About
-		</h2>
-	</section>
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92">
 	<!-- Content page -->
 	<section class="bg0 p-t-75 p-b-120">
 		<div class="container">
@@ -20,7 +16,7 @@
 							<?php echo $row->deskripsi;?>
 						</p>
 
-						<!-- <p class="stext-113 cl6 p-b-26">
+						<!--  <p class="stext-113 cl6 p-b-26">
 							Tersedia Batik tulis, Batik cap, dll
 						</p>
 

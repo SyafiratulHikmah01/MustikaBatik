@@ -27,7 +27,7 @@ class model_profile extends CI_Model {
 	}
 
 	function update($data=array(),$id){
-		$this->db->where('judul', $id);
+		$this->db->where('id', $id);
 		return $this->db->update('profile', $data);
 	}
 }

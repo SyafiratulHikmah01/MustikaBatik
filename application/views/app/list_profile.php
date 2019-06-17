@@ -190,7 +190,7 @@
       <th scope="col">Judul</th>
       <th scope="col">Deskripsi</th>
       <th scope="col">Foto</th>
-     
+      <th scope="col">Aksi</th>
     </tr>
   </thead>
   <tbody>
